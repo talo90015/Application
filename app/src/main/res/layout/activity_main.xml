@@ -4,15 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity" >
 
-    <TextView
+    <EditText
+        android:id="@+id/edit_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="Input Name"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtCommit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Input Name and change button can start game"
+        app:layout_constraintEnd_toEndOf="@+id/edit_name"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edit_name"
+        app:layout_constraintTop_toBottomOf="@+id/edit_name" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/txtCommit"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtCommit"
+        app:layout_constraintTop_toBottomOf="@+id/txtCommit">
+
+        <RadioButton
+            android:id="@+id/rb_scissor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="scissor"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/rb_rock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="rock" />
+
+        <RadioButton
+            android:id="@+id/rb_paper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="paper" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_result"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Result"
+        app:layout_constraintEnd_toEndOf="@+id/radio_group"
+        app:layout_constraintStart_toStartOf="@+id/radio_group"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
