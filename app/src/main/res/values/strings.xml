@@ -2,4 +2,13 @@
     <string name="app_name">Application</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <integer-array name="image_list">
+        <item>@drawable/apple</item>
+        <item>@drawable/banana</item>
+        <item>@drawable/grapes</item>
+        <item>@drawable/cherries</item>
+        <item>@drawable/orange</item>
+        <item>@drawable/lemon</item>
+    </integer-array>
 </resources>
