@@ -12,8 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Application">
         <activity
+            android:name=".ServiceActivity"
+            android:exported="false" />
+
+        <service
+            android:name=".IsService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
             android:name=".PhotoActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,12 +31,10 @@
         </activity>
         <activity
             android:name=".MediaActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".AnimationActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ThreadActivity2"
             android:exported="true" />

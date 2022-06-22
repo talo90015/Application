@@ -28,6 +28,7 @@ class PhotoActivity : AppCompatActivity() {
         binding = ActivityPhotoBinding.inflate(layoutInflater)
         setContentView(binding.root)
         photoPicture()
+        goService()
     }
     private fun photoPicture(){
         binding.btnPhoto.setOnClickListener {
@@ -41,6 +42,13 @@ class PhotoActivity : AppCompatActivity() {
         binding.btnRotate.setOnClickListener {
             angle += 90f
             binding.imgCamara.rotation = angle
+        }
+    }
+    private fun goService(){
+        binding.btnService.setOnClickListener {
+            startService(Intent(this, IsService::class.java))
+            Toast.makeText(this, "啟動~~", Toast.LENGTH_SHORT).show()
+            finish()
         }
     }
 
