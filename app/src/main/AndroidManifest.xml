@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.talo.application">
+    package="com.talo.application" >
 
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,7 +13,21 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Application">
+        android:theme="@style/Theme.Application" >
+        <activity
+            android:name=".SubActivity"
+            android:exported="true" >
+
+        </activity>
+
+
+        <provider
+            android:name=".MyContentProvider"
+            android:authorities="com.talo.Demo"
+            android:enabled="true"
+            android:exported="true" />
+
+
         <activity
             android:name=".SQLiteActivity"
             android:exported="true" >
@@ -22,12 +36,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".MapActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
 
         <uses-library
             android:name="org.apache.http.legacy"
@@ -44,7 +57,7 @@
 
         <activity
             android:name=".RadioActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
 
         <receiver
             android:name=".IsReceiver"
@@ -62,7 +75,7 @@
 
         <activity
             android:name=".PhotoActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".MediaActivity"
             android:exported="true" />
