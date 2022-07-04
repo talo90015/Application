@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Application">
         <activity
-            android:name=".APIActivity"
+            android:name=".NotificationActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,8 +24,18 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".APIActivity"
+            android:exported="true">
+        </activity>
+        <service android:name=".MyMessagingService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity
             android:name=".SubActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
 
         <provider
             android:name=".MyContentProvider"
@@ -35,9 +45,7 @@
 
         <activity
             android:name=".SQLiteActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".MapActivity"
             android:exported="true" />

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1081214459883",
+    "project_id": "notification-e60ea",
+    "storage_bucket": "notification-e60ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1081214459883:android:e2af1be0eb5a24cb90c3ae",
+        "android_client_info": {
+          "package_name": "com.talo.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1081214459883-e0aq6k3go2d6vvbrrglb8k0qc3qc76qi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4KpHzd6EvF4WIw4jt5n4oioJp0vRk6i8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1081214459883-e0aq6k3go2d6vvbrrglb8k0qc3qc76qi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
