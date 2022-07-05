@@ -45,6 +45,7 @@ class NotificationActivity : AppCompatActivity() {
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             nm.notify(0, builder.build())
 
+
         }
     }
 }
