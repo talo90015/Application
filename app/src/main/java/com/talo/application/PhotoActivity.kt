@@ -22,13 +22,14 @@ class PhotoActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == 0 && resultCode == RESULT_OK){
+        if (requestCode == 0 && resultCode == RESULT_OK) {
             val img = data?.extras?.get("data") ?: return
             val bitmap = img as Bitmap
             binding.imgCamara.setImageBitmap(img as Bitmap)
             recognizeImage(bitmap)
         }
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_photo)
@@ -37,12 +38,13 @@ class PhotoActivity : AppCompatActivity() {
         photoPicture()
         goService()
     }
-    private fun photoPicture(){
+
+    private fun photoPicture() {
         binding.btnPhoto.setOnClickListener {
             val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             try {
                 startActivityForResult(intent, 0)
-            }catch (e: Exception){
+            } catch (e: Exception) {
                 Toast.makeText(this, "無相機", Toast.LENGTH_SHORT).show()
             }
         }
@@ -53,14 +55,16 @@ class PhotoActivity : AppCompatActivity() {
             recognizeImage(bitmap)
         }
     }
-    private fun goService(){
+
+    private fun goService() {
         binding.btnService.setOnClickListener {
             startService(Intent(this, IsService::class.java))
             Toast.makeText(this, "啟動~~", Toast.LENGTH_SHORT).show()
             finish()
         }
     }
-    private fun recognizeImage(bitmap: Bitmap){
+
+    private fun recognizeImage(bitmap: Bitmap) {
         try {
             val labeler = ImageLabeling.getClient(
                 ImageLabelerOptions.DEFAULT_OPTIONS
@@ -69,17 +73,18 @@ class PhotoActivity : AppCompatActivity() {
             labeler.process(inputImage)
                 .addOnSuccessListener { labels ->
                     val result = arrayListOf<String>()
-                    for (label in labels){
+                    for (label in labels) {
                         val text = label.text
                         val confidence = label.confidence
                         result.add("$text , 可信度$confidence")
                     }
-                    binding.photoList.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, result)
+                    binding.photoList.adapter =
+                        ArrayAdapter(this, android.R.layout.simple_list_item_1, result)
                 }
                 .addOnFailureListener {
                     Toast.makeText(this, "錯誤", Toast.LENGTH_SHORT).show()
                 }
-        }catch (e: Exception){
+        } catch (e: Exception) {
             e.printStackTrace()
         }
     }
